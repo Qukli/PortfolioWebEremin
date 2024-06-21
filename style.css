@@ -1,0 +1,169 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.header nav a:hover {
+  color: #ffcc00;
+}
+
+.section {
+  padding: 50px 20px;
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.section:hover {
+  background: rgba(50, 50, 50, 0.8);
+  /* Изменение цвета фона при наведении */
+  transform: scale(1.05);
+  /* Небольшое увеличение при наведении */
+}
+
+.break-section {
+  height: 50px;
+  background: transparent;
+}
+
+.main-content h2 {
+  margin: 0 0 20px;
+}
+
+.main-content p,
+.main-content ul {
+  text-align: left;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.main-content a {
+  color: #e2e2e2;
+  /* Цвет ссылок как у Adidas */
+  text-decoration: none;
+  border-bottom: 2px solid #e2e2e2;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.main-content a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+#projects.active,
+#about.active,
+#contact.active {
+  font-size: 1.5em;
+}
+
+#back-button-projects,
+#back-button-about,
+#back-button-contact {
+  margin-top: 20px;
+  margin-left: 10px;
+  /* Пододвинуть кнопку правее */
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #000000, #333333);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1em;
+  display: none;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#back-button-projects:hover,
+#back-button-about:hover,
+#back-button-contact:hover {
+  background: linear-gradient(45deg, #333333, #000000);
+  color: #ffcc00;
+  transform: scale(1.05);
+}
+
+#back-button-projects:active,
+#back-button-about:active,
+#back-button-contact:active {
+  transform: scale(0.95);
+}
+
+.hidden {
+  display: none;
+}
+
+.project-list {
+  list-style-type: none;
+  /* Убрать точки у списка */
+  padding: 0;
+}
+
+.project-item {
+  margin: 10px 0;
+}
+
+.project-item a {
+  color: #e2e2e2;
+  /* Цвет ссылок как у Adidas */
+  text-decoration: none;
+  border-bottom: 2px solid #e2e2e2;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.project-item a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Стили для ссылок в разделе контактов */
+#contact a {
+  color: #ffcc00;
+  /* Цвет текста */
+  text-decoration: none;
+  /* Убираем подчеркивание */
+  border-bottom: 1px solid transparent;
+  /* Подчеркивание (невидимое по умолчанию) */
+  transition: color 0.3s, border-bottom-color 0.3s;
+  /* Плавное изменение цвета и подчеркивания при наведении */
+}
+
+#contact a:hover {
+  color: white;
+  /* Цвет текста при наведении */
+  border-bottom-color: white;
+  /* Цвет подчеркивания при наведении */
+}

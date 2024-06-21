@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое Портфолио</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ваши стили могут быть здесь */
+    </style>
+</head>
+
+<body>
+    <!-- Видео заднего плана -->
+    <video class="background-video" autoplay loop muted>
+        <source src="ds.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Контент сайта -->
+    <div class="content">
+        <div class="header">
+            <h1>Добро пожаловать в мое портфолио</h1>
+            <nav>
+                <a href="https://qukli.github.io/websit_eportfolio/" target="_blank">Резюме</a>
+                <a href="#about">Обо мне</a>
+                <a href="#projects">Проекты</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+        </div>
+
+        <div class="section" id="about">
+            <h2>Обо мне</h2>
+            <p>Привет! Меня зовут Сергей, и я учусь на третьем курсе политехнического института по специальности "Информатика и вычислительная техника". Заканчиваю годовое обучение в GeekBrains, где хорошо усвоил SQL, Python, основы статистики, A/B тестирования, Power BI, Excel, нотации BPMN и UML. Есть интересные проекты в портфолио, связанные с визуализацией в Power BI, анализом данных в Python. На LeetCode решаю задачи на SQL (medium).</p>
+            <button id="back-button-about" class="hidden">Назад</button>
+        </div>
+
+        <div class="break-section"></div> <!-- Промежуточный блок -->
+
+        <div class="section" id="projects">
+            <h2>Проекты</h2>
+            <p>Вот некоторые из проектов, над которыми я работал:</p>
+            <ul class="project-list">
+                <li class="project-item">Интерактивный дашборд для анализа продажи пиццы (web version): <a
+                        href="https://app.powerbi.com/view?r=eyJrIjoiZGNjNTcwZGMtZjAxNy00OGM4LWI5ZmMtZTc0YTZjOTRiM2YyIiwidCI6ImNjYjlkM2VjLTg1YWQtNDY4Ny1hNDA0LTIxMDAwOGU3MDkyYyIsImMiOjl9"
+                        target="_blank">Посмотреть отчет (Power BI)</a></li>
+                <li class="project-item">Исследование больших объемов данных с использованием Python: <a
+                        href="https://colab.research.google.com/drive/1vFkvSyLsRitJSGEJ1jQA6__akMZI4RT5?usp=sharing"
+                        target="_blank">Смотреть файл исследования</a></li>
+            </ul>
+            <button id="back-button-projects" class="hidden">Назад</button>
+        </div>
+
+        <div class="break-section"></div> <!-- Промежуточный блок -->
+
+        <div class="section" id="contact">
+            <h2>Контакты</h2>
+            <p>Вы можете связаться со мной по адресу <a href="mailto:sergyereminn@gmail.com">sergyereminn@gmail.com</a> или найти меня в Telegram по ссылке: <a href="https://t.me/hi_eremin" target="_blank">https://t.me/hi_eremin</a>.</p>
+            <button id="back-button-contact" class="hidden">Назад</button>
+        </div>
+    </div>
+
+    <script>
+        // Функция для отображения конкретного раздела и кнопки "Назад"
+        function showSection(sectionId, backButtonId) {
+            document.querySelectorAll('.section').forEach(function (section) {
+                section.style.display = 'none';
+            });
+            var section = document.getElementById(sectionId);
+            section.style.display = 'block';
+            section.classList.add('active');
+            document.getElementById(backButtonId).style.display = 'block';
+        }
+
+        // Функция для возврата на главный экран
+        function showMainScreen() {
+            document.querySelectorAll('.section').forEach(function (section) {
+                section.style.display = 'block';
+            });
+            document.querySelectorAll('.section').forEach(function (section) {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('button[id^="back-button"]').forEach(function (button) {
+                button.style.display = 'none';
+            });
+        }
+
+        // Показ раздела "Проекты" при нажатии на ссылку
+        document.querySelector('a[href="#projects"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            showSection('projects', 'back-button-projects');
+        });
+
+        // Показ раздела "Обо мне" при нажатии на ссылку
+        document.querySelector('a[href="#about"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            showSection('about', 'back-button-about');
+        });
+
+        // Показ раздела "Контакты" при нажатии на ссылку
+        document.querySelector('a[href="#contact"]').addEventListener('click', function (event) {
+            event.preventDefault();
+            showSection('contact', 'back-button-contact');
+        });
+
+        // Кнопка "Назад" для возврата ко всем разделам из "Проектов"
+        document.getElementById('back-button-projects').addEventListener('click', function () {
+            showMainScreen();
+        });
+
+        // Кнопка "Назад" для возврата ко всем разделам из "Обо мне"
+        document.getElementById('back-button-about').addEventListener('click', function () {
+            showMainScreen();
+        });
+
+        // Кнопка "Назад" для возврата ко всем разделам из "Контактов"
+        document.getElementById('back-button-contact').addEventListener('click', function () {
+            showMainScreen();
+        });
+    </script>
+</body>
+
+</html>
